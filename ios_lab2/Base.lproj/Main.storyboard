@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1912" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kDc-aX-R8r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_lab2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,217 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h6b-FE-Dg4" userLabel="Main Stack View">
+                                <rect key="frame" x="20" y="186" width="560" height="229"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9HH-aK-i3Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEK-aS-bd6">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cG-M2-9LL" userLabel="TextField Artist">
+                                                <rect key="frame" x="62" y="0.0" width="498" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="anyProportyOfAlbumChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="wb3-jJ-hMc"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0As-0j-YXT">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-Fj-aDC">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fy7-UF-2GC" userLabel="TestField Title">
+                                                <rect key="frame" x="62" y="0.0" width="498" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="anyProportyOfAlbumChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="62P-a3-puK"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="60h-0m-rLC">
+                                        <rect key="frame" x="0.0" y="100" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-S0-Lgh">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXP-dk-yPn" userLabel="TextField Genre">
+                                                <rect key="frame" x="62" y="0.0" width="498" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="anyProportyOfAlbumChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="pST-IY-1Oa"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zxn-iV-Oxo">
+                                        <rect key="frame" x="0.0" y="150" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFC-9s-cF7">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NYw-ea-jEx" userLabel="TextField Year">
+                                                <rect key="frame" x="62" y="0.0" width="498" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="anyProportyOfAlbumChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="hkJ-Me-LEw"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hfs-1d-9C6">
+                                        <rect key="frame" x="0.0" y="200" width="560" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysG-RG-f20">
+                                                <rect key="frame" x="0.0" y="8" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acc-p3-6ep" userLabel="Label Rating">
+                                                <rect key="frame" x="263" y="8" width="11" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-BT-N9H">
+                                                <rect key="frame" x="466" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="anyProportyOfAlbumChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="i6D-gB-ZRX"/>
+                                                    <action selector="stepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="jRD-uW-x72"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fy7-UF-2GC" firstAttribute="width" secondItem="TXP-dk-yPn" secondAttribute="width" id="5v4-by-VmU"/>
+                                    <constraint firstItem="TXP-dk-yPn" firstAttribute="width" secondItem="NYw-ea-jEx" secondAttribute="width" id="Vzk-Du-zJ9"/>
+                                    <constraint firstItem="3cG-M2-9LL" firstAttribute="width" secondItem="fy7-UF-2GC" secondAttribute="width" id="YQz-1A-hjL"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-nO-FiW">
+                                <rect key="frame" x="20" y="550" width="560" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOS-Vr-Hen">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sSE-e6-Dp9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-ll-9WB">
+                                        <rect key="frame" x="280" y="0.0" width="280" height="30"/>
+                                        <state key="normal" title="Delete"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h6b-FE-Dg4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="2RB-IH-aoc"/>
+                            <constraint firstItem="cIt-nO-FiW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9G5-KQ-zCK"/>
+                            <constraint firstItem="h6b-FE-Dg4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XCR-fz-xQd"/>
+                            <constraint firstAttribute="trailing" secondItem="h6b-FE-Dg4" secondAttribute="trailing" constant="20" id="XaL-8u-5nR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cIt-nO-FiW" secondAttribute="bottom" constant="20" id="YGU-PK-1Aq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cIt-nO-FiW" secondAttribute="trailing" id="l2d-xv-C3h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonRates" destination="CUo-BT-N9H" id="stv-lF-Asr"/>
+                        <outlet property="buttonSave" destination="LOS-Vr-Hen" id="UEn-EK-hBc"/>
+                        <outlet property="genreTextField" destination="TXP-dk-yPn" id="gaH-xh-oDz"/>
+                        <outlet property="labelRating" destination="acc-p3-6ep" id="o2t-4s-Pag"/>
+                        <outlet property="numberRate" destination="acc-p3-6ep" id="wiF-Bv-4Zi"/>
+                        <outlet property="stepper" destination="CUo-BT-N9H" id="Chy-mS-6om"/>
+                        <outlet property="textFieldTitle" destination="fy7-UF-2GC" id="6Fi-fx-8fm"/>
+                        <outlet property="yearTextView" destination="NYw-ea-jEx" id="NnF-y5-1pZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1451" y="365"/>
+        </scene>
+        <!--Albums Table View Controller-->
+        <scene sceneID="CGX-6D-9da">
+            <objects>
+                <tableViewController id="ksb-cM-Yxa" customClass="AlbumsTableViewController" customModule="ios_lab2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y1R-i1-dBj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="rWp-Sg-D4M">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWp-Sg-D4M" id="2cW-K8-pfk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="fTH-uD-d5u"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ksb-cM-Yxa" id="Vps-dg-RMD"/>
+                            <outlet property="delegate" destination="ksb-cM-Yxa" id="n1O-uE-qaM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YCN-Qf-7ll">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9TQ-Mc-yFZ">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="EH6-n9-p7u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNg-th-vbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="365"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4R4-7X-YaX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kDc-aX-R8r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mS5-ah-Rzc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ksb-cM-Yxa" kind="relationship" relationship="rootViewController" id="Vo2-v1-NIH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LjB-0W-6sK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47" y="365"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fTH-uD-d5u"/>
+    </inferredMetricsTieBreakers>
 </document>

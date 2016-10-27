@@ -14,6 +14,9 @@
 		AC12E0321DC204B80033814B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC12E0301DC204B80033814B /* LaunchScreen.storyboard */; };
 		AC12E03D1DC204B80033814B /* ios_lab2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E03C1DC204B80033814B /* ios_lab2Tests.swift */; };
 		AC12E0481DC204B80033814B /* ios_lab2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E0471DC204B80033814B /* ios_lab2UITests.swift */; };
+		AC12E0561DC205670033814B /* Albums.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC12E0551DC205670033814B /* Albums.plist */; settings = {ASSET_TAGS = (); }; };
+		AC12E0581DC205730033814B /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E0571DC205730033814B /* AlbumsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AC12E05A1DC20C030033814B /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E0591DC20C030033814B /* Albums.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		AC12E0431DC204B80033814B /* ios_lab2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_lab2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC12E0471DC204B80033814B /* ios_lab2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_lab2UITests.swift; sourceTree = "<group>"; };
 		AC12E0491DC204B80033814B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC12E0551DC205670033814B /* Albums.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Albums.plist; path = ../Albums.plist; sourceTree = "<group>"; };
+		AC12E0571DC205730033814B /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
+		AC12E0591DC20C030033814B /* Albums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		AC12E0261DC204B80033814B /* ios_lab2 */ = {
 			isa = PBXGroup;
 			children = (
+				AC12E0551DC205670033814B /* Albums.plist */,
 				AC12E0271DC204B80033814B /* AppDelegate.swift */,
 				AC12E0291DC204B80033814B /* ViewController.swift */,
 				AC12E02B1DC204B80033814B /* Main.storyboard */,
 				AC12E02E1DC204B80033814B /* Assets.xcassets */,
 				AC12E0301DC204B80033814B /* LaunchScreen.storyboard */,
 				AC12E0331DC204B80033814B /* Info.plist */,
+				AC12E0571DC205730033814B /* AlbumsTableViewController.swift */,
+				AC12E0591DC20C030033814B /* Albums.swift */,
 			);
 			path = ios_lab2;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 			files = (
 				AC12E0321DC204B80033814B /* LaunchScreen.storyboard in Resources */,
 				AC12E02F1DC204B80033814B /* Assets.xcassets in Resources */,
+				AC12E0561DC205670033814B /* Albums.plist in Resources */,
 				AC12E02D1DC204B80033814B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC12E02A1DC204B80033814B /* ViewController.swift in Sources */,
+				AC12E0581DC205730033814B /* AlbumsTableViewController.swift in Sources */,
 				AC12E0281DC204B80033814B /* AppDelegate.swift in Sources */,
+				AC12E05A1DC20C030033814B /* Albums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
