@@ -191,23 +191,50 @@
             </objects>
             <point key="canvasLocation" x="1451" y="365"/>
         </scene>
-        <!--Albums Table View Controller-->
+        <!--Album Table View Controller-->
         <scene sceneID="CGX-6D-9da">
             <objects>
-                <tableViewController id="ksb-cM-Yxa" customClass="AlbumsTableViewController" customModule="ios_lab2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y1R-i1-dBj">
+                <tableViewController id="ksb-cM-Yxa" customClass="AlbumTableViewController" customModule="ios_lab2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y1R-i1-dBj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="50" id="rWp-Sg-D4M">
-                                <rect key="frame" x="0.0" y="86" width="600" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongTableViewCell" rowHeight="94" id="rWp-Sg-D4M" customClass="SongTableViewCell" customModule="ios_lab2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWp-Sg-D4M" id="2cW-K8-pfk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nQ-xl-xe4">
+                                            <rect key="frame" x="43" y="17" width="509" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="XT8-bv-tiy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-PX-hpa">
+                                            <rect key="frame" x="43" y="52" width="509" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3nQ-xl-xe4" firstAttribute="top" secondItem="2cW-K8-pfk" secondAttribute="topMargin" constant="9" id="7dX-gJ-daL"/>
+                                        <constraint firstItem="3nQ-xl-xe4" firstAttribute="leading" secondItem="2cW-K8-pfk" secondAttribute="leadingMargin" constant="35" id="QAZ-d9-Wd3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3nQ-xl-xe4" secondAttribute="trailing" constant="40" id="cjA-tw-FC9"/>
+                                        <constraint firstItem="3nQ-xl-xe4" firstAttribute="trailing" secondItem="VDD-PX-hpa" secondAttribute="trailing" id="gPO-uN-xSa"/>
+                                        <constraint firstItem="VDD-PX-hpa" firstAttribute="top" secondItem="3nQ-xl-xe4" secondAttribute="bottom" constant="14" id="kXY-K2-kLl"/>
+                                        <constraint firstItem="3nQ-xl-xe4" firstAttribute="leading" secondItem="VDD-PX-hpa" secondAttribute="leading" id="rpS-MY-4w1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="labelArtist" destination="VDD-PX-hpa" id="aGh-rC-1xd"/>
+                                    <outlet property="labelTitle" destination="3nQ-xl-xe4" id="PWu-gx-tel"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="fTH-uD-d5u"/>
                                 </connections>
                             </tableViewCell>

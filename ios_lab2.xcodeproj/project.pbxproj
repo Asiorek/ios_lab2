@@ -15,7 +15,9 @@
 		AC12E03D1DC204B80033814B /* ios_lab2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E03C1DC204B80033814B /* ios_lab2Tests.swift */; };
 		AC12E0481DC204B80033814B /* ios_lab2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E0471DC204B80033814B /* ios_lab2UITests.swift */; };
 		AC12E0561DC205670033814B /* Albums.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC12E0551DC205670033814B /* Albums.plist */; };
-		AC12E0581DC205730033814B /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC12E0571DC205730033814B /* AlbumsTableViewController.swift */; };
+		B42510531DD224FA00F0DB1F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42510521DD224FA00F0DB1F /* Song.swift */; };
+		B42510551DD2264200F0DB1F /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42510541DD2264200F0DB1F /* SongTableViewCell.swift */; };
+		B42510571DD229C000F0DB1F /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42510561DD229C000F0DB1F /* AlbumTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		AC12E0471DC204B80033814B /* ios_lab2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_lab2UITests.swift; sourceTree = "<group>"; };
 		AC12E0491DC204B80033814B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC12E0551DC205670033814B /* Albums.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Albums.plist; path = ../Albums.plist; sourceTree = "<group>"; };
-		AC12E0571DC205730033814B /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
+		B42510521DD224FA00F0DB1F /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		B42510541DD2264200F0DB1F /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		B42510561DD229C000F0DB1F /* AlbumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +109,12 @@
 				AC12E0271DC204B80033814B /* AppDelegate.swift */,
 				AC12E0291DC204B80033814B /* ViewController.swift */,
 				AC12E02B1DC204B80033814B /* Main.storyboard */,
+				B42510541DD2264200F0DB1F /* SongTableViewCell.swift */,
 				AC12E02E1DC204B80033814B /* Assets.xcassets */,
 				AC12E0301DC204B80033814B /* LaunchScreen.storyboard */,
 				AC12E0331DC204B80033814B /* Info.plist */,
-				AC12E0571DC205730033814B /* AlbumsTableViewController.swift */,
+				B42510521DD224FA00F0DB1F /* Song.swift */,
+				B42510561DD229C000F0DB1F /* AlbumTableViewController.swift */,
 			);
 			path = ios_lab2;
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42510531DD224FA00F0DB1F /* Song.swift in Sources */,
 				AC12E02A1DC204B80033814B /* ViewController.swift in Sources */,
-				AC12E0581DC205730033814B /* AlbumsTableViewController.swift in Sources */,
+				B42510571DD229C000F0DB1F /* AlbumTableViewController.swift in Sources */,
+				B42510551DD2264200F0DB1F /* SongTableViewCell.swift in Sources */,
 				AC12E0281DC204B80033814B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

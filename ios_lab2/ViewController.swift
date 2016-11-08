@@ -42,19 +42,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        albumsDocPath = documentsPath.stringByAppendingString("/Albums.plist")
-        if !fileManager.fileExistsAtPath(albumsDocPath){
-            try? fileManager.copyItemAtPath(plistCatPath!, toPath: albumsDocPath)
-        }
-        
-        buttonSave.enabled=false;
-        albums = readFile()
-        
-        artistTextField.text=albums[currentRecord].valueForKey("artist") as? String
-        titleTextField.text=albums[currentRecord].valueForKey("title") as? String
-        genreTextField.text=albums[currentRecord].valueForKey("genre") as? String
-        
-        labelRating.text=String(albums[currentRecord].valueForKey("rating") as! Int)
+//        albumsDocPath = documentsPath.stringByAppendingString("/Albums.plist")
+//        if !fileManager.fileExistsAtPath(albumsDocPath){
+//            try! fileManager.copyItemAtPath(plistCatPath!, toPath: albumsDocPath)
+//        }
+//        
+//        buttonSave.enabled=false;
+//        albums = readFile()
+//        
+//        artistTextField.text=albums[currentRecord].valueForKey("artist") as? String
+//        titleTextField.text=albums[currentRecord].valueForKey("title") as? String
+//        genreTextField.text=albums[currentRecord].valueForKey("genre") as? String
+//        
+//        labelRating.text=String(albums[currentRecord].valueForKey("rating") as! Int)
     }
     
     func readFile()->NSMutableArray{
