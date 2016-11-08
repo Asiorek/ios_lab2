@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonDelete: UIButton!
     @IBOutlet weak var buttonCancel: UIButton!
     
+    var song: Song?
+    var deleteIndex: NSIndexPath?
+    
     let plistCatPath=NSBundle.mainBundle().pathForResource("Albums", ofType: "plist")
     let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
     let fileManager = NSFileManager.defaultManager()
@@ -42,19 +45,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        albumsDocPath = documentsPath.stringByAppendingString("/Albums.plist")
-//        if !fileManager.fileExistsAtPath(albumsDocPath){
-//            try! fileManager.copyItemAtPath(plistCatPath!, toPath: albumsDocPath)
-//        }
-//        
-//        buttonSave.enabled=false;
-//        albums = readFile()
-//        
-//        artistTextField.text=albums[currentRecord].valueForKey("artist") as? String
-//        titleTextField.text=albums[currentRecord].valueForKey("title") as? String
-//        genreTextField.text=albums[currentRecord].valueForKey("genre") as? String
-//        
-//        labelRating.text=String(albums[currentRecord].valueForKey("rating") as! Int)
+        if let song = song {
+            artistTextField.text = song.artist
+            titleTextField.text = song.title
+            genreTextField.text = song.genre
+            yearTextView.text = String(song.year)
+            labelRating.text = String(song.rating)
+            stepper.value = Double(song.rating)
+        }
+        
+        print(song)
     }
     
     func readFile()->NSMutableArray{
@@ -83,18 +83,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickBtnSave(sender: AnyObject) {
-        let artistR = artistTextField.text ?? ""
-        let genreR = genreTextField.text ?? ""
-        let titleR = titleTextField.text ?? ""
-        let yearR = Int(yearTextView.text!) ?? 0
-        let ratingR = Int(labelRating.text!) ?? 0
-        if currentRecord==albums.count{
-            albums.addObject(["artist":artistR,"title":titleR,"genre":genreR,"date":yearR,"rating":ratingR])
-        }
         
-        if currentRecord >= 0 && currentRecord < albums.count {
-            albums.replaceObjectAtIndex(currentRecord, withObject: ["artist":artistR,"title":titleR,"genre":genreR,"date":yearR,"rating":ratingR])
-        }
+        
+        print("Save button")
     }
     
     @IBAction func clickBtnDelete(sender: UIButton) {
@@ -115,7 +106,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clickBtnCancel(sender: AnyObject) {
-        //TODO: return to TableView
+        let isPresentingInAddSongMode = presentingViewController is UINavigationController
+        if isPresentingInAddSongMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     func showRecord(index:Int)->Void{
@@ -166,6 +163,22 @@ class ViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if buttonSave === sender {
+            let title = titleTextField.text ?? ""
+            let artist = artistTextField.text ?? ""
+            let genre = genreTextField.text ?? ""
+            let year = Int(yearTextView.text ?? "0")
+            let rating = Int(labelRating.text ?? "0")
+            
+            song = Song(title: title, artist: artist, genre: genre, year: year!, rating: rating!)
+        }
+        if buttonDelete === sender {
+            let sourceViewController = segue.destinationViewController as! AlbumTableViewController
+            deleteIndex = sourceViewController.tableView.indexPathForSelectedRow
+        }
     }
 }
 

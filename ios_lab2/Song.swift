@@ -31,19 +31,19 @@ class Song {
     }
     
     
-    //class func convertToNSMutableArray(songs:[Song]) -> NSMutableArray {
-     //   let albums:NSMutableArray = []
-    //    for song in songs {
-    //        let newSong = NSDictionary(dictionary: [
-    //            "artist" : song.artist,
-    //            "title" : song.title,
-    //            "date" : song.year,
-    //            "genre" : song.genre,
-    //            "rating" : song.rating
-    //            ])
-   //         albums.addObject(newSong)
-   //     }
-   //     return albums
-  //  }
+    class func convertToNSMutableArray(songs:[Song]) -> NSMutableArray {
+        let albums:NSMutableArray = []
+        for song in songs {
+            let newSong = NSDictionary(dictionary: [
+                "artist" : song.artist,
+                "title" : song.title,
+                "date" : song.year,
+                "genre" : song.genre,
+                "rating" : song.rating
+                ])
+            albums.addObject(newSong)
+        }
+        return albums
+    }
 }
 

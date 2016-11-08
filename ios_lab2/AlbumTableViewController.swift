@@ -77,7 +77,7 @@ class AlbumTableViewController: UITableViewController {
                 songDetailViewController.song = selectedSong
             }
         }
-        else if segue.identifier == "AddItem" {
+        else if segue.identifier == "NewSong" {
             print("Adding new song")
         }
     }
@@ -89,7 +89,6 @@ class AlbumTableViewController: UITableViewController {
                 if (deleteIndex != nil) {
                     album.removeAtIndex((deleteIndex?.row)!)
                     tableView.deleteRowsAtIndexPaths([deleteIndex!], withRowAnimation: .Fade)
-                    
                 }
                 else {
                     album[selectedIndexPath.row] = song
@@ -98,7 +97,6 @@ class AlbumTableViewController: UITableViewController {
                 
             }
             else {
-                
                 let newIndexPath = NSIndexPath(forRow: album.count, inSection: 0)
                 album.append(song)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
@@ -110,17 +108,17 @@ class AlbumTableViewController: UITableViewController {
     
     func saveSongs() {
         print("Save songs")
-        let plistPath = NSBundle.mainBundle().pathForResource("songs", ofType: "plist")!
+        let plistPath = NSBundle.mainBundle().pathForResource("Albums", ofType: "plist")!
         print(plistPath)
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        let albumsDocPath = documentsPath.stringByAppendingString("/songs.plist")
+        let albumsDocPath = documentsPath.stringByAppendingString("/Albums.plist")
         let fileManager = NSFileManager.defaultManager()
         if !fileManager.fileExistsAtPath(albumsDocPath) {
             print("copy")
             try! fileManager.copyItemAtPath(plistPath, toPath: albumsDocPath)
         }
         
-        let albums = album.convertToNSMutableArray(album)
+        let albums = Song.convertToNSMutableArray(album)
         print(albumsDocPath)
         
         albums.writeToFile(plistPath, atomically: true)

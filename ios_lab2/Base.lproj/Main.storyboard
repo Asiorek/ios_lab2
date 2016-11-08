@@ -132,9 +132,6 @@
                                                 </connections>
                                             </stepper>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="acc-p3-6ep" firstAttribute="leading" secondItem="hfs-1d-9C6" secondAttribute="leading" constant="263" id="s62-mR-WRn"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -146,6 +143,7 @@
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="clickBtnSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5qA-KC-4rz"/>
+                                            <segue destination="67e-1y-MRe" kind="unwind" unwindAction="unwindToSongList:" id="bbo-5C-PBd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-ll-9WB">
@@ -153,6 +151,7 @@
                                         <state key="normal" title="Delete"/>
                                         <connections>
                                             <action selector="clickBtnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vnE-tV-OJh"/>
+                                            <segue destination="67e-1y-MRe" kind="unwind" unwindAction="unwindToSongList:" id="8XF-72-yF0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WW-Hs-dWi">
@@ -188,6 +187,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="67e-1y-MRe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1451" y="365"/>
         </scene>
@@ -216,7 +216,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-PX-hpa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-PX-hpa">
                                             <rect key="frame" x="43" y="52" width="509" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,7 +235,7 @@
                                 <connections>
                                     <outlet property="labelArtist" destination="VDD-PX-hpa" id="aGh-rC-1xd"/>
                                     <outlet property="labelTitle" destination="3nQ-xl-xe4" id="PWu-gx-tel"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="fTH-uD-d5u"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetails" id="5fv-qz-iEn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -247,7 +247,7 @@
                     <navigationItem key="navigationItem" id="YCN-Qf-7ll">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9TQ-Mc-yFZ">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="EH6-n9-p7u"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="NewSong" id="wQF-gE-WvU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -276,6 +276,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EH6-n9-p7u"/>
+        <segue reference="wQF-gE-WvU"/>
     </inferredMetricsTieBreakers>
 </document>
